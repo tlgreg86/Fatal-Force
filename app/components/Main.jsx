@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Main = () => {
+import CardGridContainer from './containers/CardGridContainer';
 
-  return (
-    <div>
-      <h1>hello fucker</h1>
-    </div>
-  )
+class Main extends Component {
+  constructor() {
+    super();
+  }
+
+
+  render() {
+    return (
+      <div>
+        <CardGridContainer />
+      </div>
+    )
+  }
 }
 
 export default Main;
