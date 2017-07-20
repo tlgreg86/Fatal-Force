@@ -15,3 +15,14 @@ body {
 #main {
   text-align: center;
 }
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px;
+  height: 100px;
+  border: 1px solid blue;
+}
