@@ -6,6 +6,7 @@ export const loadData = () => {
       .then(data => {
         dispatch(addData(data))
       })
+      .catch(error => { throw(error)})
   })
 }
 
