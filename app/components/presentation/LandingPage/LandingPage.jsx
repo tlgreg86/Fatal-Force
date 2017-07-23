@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const LandingPage = () => {
+export const LandingPage = () => {
 
   return (
     <div className='landing-page'>
@@ -10,5 +10,3 @@ const LandingPage = () => {
     </div>
   )
 }
-
-export default LandingPage

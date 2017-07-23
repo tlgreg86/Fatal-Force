@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { NavBar } from './NavBar';
-import Card from './Card'
+import { NavBar } from '../NavBar/NavBar';
+import { Card } from '../Card/Card'
 
-const CardGrid = (props) => {
+export const CardGrid = (props) => {
   const { data } = props;
 
   const loadingDiv = <div className='loading-spinner'></div>
@@ -24,5 +24,3 @@ const CardGrid = (props) => {
 
   )
 }
-
-export default CardGrid;

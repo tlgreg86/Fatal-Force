@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import CardGrid from '../presentation/CardGrid';
+import { CardGrid } from '../presentation/CardGrid/CardGrid';
 import { loadData } from '../../actions';
 
 const mapStateToProps = (state) => {

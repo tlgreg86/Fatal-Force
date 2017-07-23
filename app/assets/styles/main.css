@@ -45,7 +45,6 @@ body {
 
 .nav-bar {
   display: flex;
-  /*position: fixed;*/
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
@@ -55,14 +54,7 @@ body {
   background-color: #D0CCD0;
   border-top: 6px solid  white;
   border-bottom: 6px solid  white;
-  /*border-style: inset;*/
 }
-
-/*.curtain {
-  width: 100%;
-  height: 172px;
-  background-color: rgba(255, 255, 255, 0);
-}*/
 
 .title-nav-bar {
   font-family: monospace;
@@ -99,4 +91,8 @@ body {
   height: auto;
   background-color: #B8BED5;
   border: 1px solid white;
+}
+
+.vis-wrapper {
+  width: 100%;
 }

@@ -8,7 +8,7 @@ import createHistory from 'history/createBrowserHistory';
 
 import rootReducer from './reducers/index.js';
 
-import Main from './components/Main';
+import Main from './components/presentation/Main/Main';
 import { loadData } from './actions/index.js';
 
 const history = createHistory();

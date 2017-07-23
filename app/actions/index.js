@@ -1,4 +1,4 @@
-import ApiCall from '../components/apiHelper';
+import ApiCall from '../components/helpers/apiHelper';
 
 export const loadData = () => {
   return ( dispatch => {
