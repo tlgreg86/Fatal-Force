@@ -1,18 +1,12 @@
 import { connect } from 'react-redux';
 
-import CardGrid from '../presentation/CardGrid';
+import { CardGrid } from '../presentation/CardGrid/CardGrid';
 import { loadData } from '../../actions';
 
 const mapStateToProps = (state) => {
-  return {
+    return {
     data: state.data
   }
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     loadData: () => dispatch(loadData)
-//   }
-// }
 
 export default connect(mapStateToProps, null)(CardGrid)
