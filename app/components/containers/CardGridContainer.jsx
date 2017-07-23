@@ -4,15 +4,9 @@ import CardGrid from '../presentation/CardGrid';
 import { loadData } from '../../actions';
 
 const mapStateToProps = (state) => {
-  return {
+    return {
     data: state.data
   }
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     loadData: () => dispatch(loadData)
-//   }
-// }
 
 export default connect(mapStateToProps, null)(CardGrid)

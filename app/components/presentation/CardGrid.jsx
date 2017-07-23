@@ -1,10 +1,12 @@
 import React from 'react';
 
-import Card from './Card';
+import { NavBar } from './NavBar';
+import Card from './Card'
 
 const CardGrid = (props) => {
   const { data } = props;
-  console.log(data);
+
+  const loadingDiv = <div className='loading-spinner'></div>
 
   const dataArray = data.map( (dataObj, index) =>{
     return <Card cardData={ dataObj }
@@ -13,8 +15,11 @@ const CardGrid = (props) => {
   })
 
   return (
-    <div className='card-grid'>
-      {dataArray}
+    <div className='victims-page'>
+      <NavBar />
+      <div className='card-grid'>
+        {!data.length ? loadingDiv : dataArray}
+      </div>
     </div>
 
   )
