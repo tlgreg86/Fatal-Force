@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 
 import { LandingPage } from '../LandingPage/LandingPage'
 import CardGridContainer from '../../containers/CardGridContainer';
-import { Visualizations } from '../Visualizations/Visualizations';
+import { VisualizationsPage } from '../VisualizationsPage/VisualizationsPage';
 
 const Main = () => {
 
@@ -13,7 +13,7 @@ const Main = () => {
       <div className='app-wrapper'>
         <Route exact path='/' component={() => <LandingPage/>} />
         <Route path='/victims-list' component={() => <CardGridContainer/>} />
-        <Route path='/visualizations' component={() => <Visualizations/>} />
+        <Route path='/visualizations' component={() => <VisualizationsPage/>} />
       </div>
     </Router>
   )
