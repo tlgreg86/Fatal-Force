@@ -8,7 +8,7 @@ import { VictoryBar,
          VictoryLegend
        } from 'victory';
 
-import { filterByYear, totals } from '../../helpers/cleaner';
+import { filterByYear, totals,  } from '../../helpers/cleaner';
 
 export const BarChart = (props) => {
 
@@ -26,6 +26,7 @@ export const BarChart = (props) => {
     {race: 'Hispanic/Latino', totals: races2015[2015]['Hispanic/Latino']},
     {race: 'Arab-American', totals: races2015[2015]['Arab-American']}
   ];
+  
   const data2016 = [
     {race: 'White', totals: races2016[2016].White},
     {race: 'Black', totals: races2016[2016].Black},
