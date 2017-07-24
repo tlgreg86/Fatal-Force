@@ -2,33 +2,26 @@ import React from 'react';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from 'victory';
 
 import { NavBar } from '../NavBar/NavBar';
+import { filterByYear, totals } from '../../helpers/cleaner';
 
-const data2012 = [
-  {quarter: 1, earnings: 13000},
-  {quarter: 2, earnings: 16500},
-  {quarter: 3, earnings: 14250},
-  {quarter: 4, earnings: 19000}
-];
 
-const data2013 = [
-  {quarter: 1, earnings: 15000},
-  {quarter: 2, earnings: 12500},
-  {quarter: 3, earnings: 19500},
-  {quarter: 4, earnings: 13000}
-];
-
-const data2014 = [
-  {quarter: 1, earnings: 11500},
-  {quarter: 2, earnings: 13250},
-  {quarter: 3, earnings: 20000},
-  {quarter: 4, earnings: 15500}
-];
 
 const data2015 = [
-  {quarter: 1, earnings: 18000},
-  {quarter: 2, earnings: 13250},
-  {quarter: 3, earnings: 15000},
-  {quarter: 4, earnings: 12000}
+  {race: 'White', totals: 18000},
+  {race: 'Black', totals: 13250},
+  {race: 'Native American', totals: 15000},
+  {race: 'Asian/Pacific Islander', totals: 12000},
+  {race: 'Hispanic/Latino', totals: 12000},
+  {race: 'Arab-American', totals: 12000}
+];
+
+const data2016 = [
+  {race: 'White', totals: 18000},
+  {race: 'Black', totals: 13250},
+  {race: 'Native American', totals: 15000},
+  {race: 'Asian/Pacific Islander', totals: 15000},
+  {race: 'Hispanic/Latino', totals: 12000},
+  {race: 'Arab-American', totals: 12000}
 ];
 
 export const Visualizations = () => {
@@ -41,8 +34,15 @@ export const Visualizations = () => {
         theme={VictoryTheme.material}
       >
         <VictoryAxis
-          tickValues={[1, 2, 3, 4]}
-          tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
+          tickValues={[1, 2, 3, 4, 5, 6]}
+          tickFormat={[
+                       "White",
+                       "Black",
+                       "Native American",
+                       "Asian/Pacific Islander",
+                       "Hispanic/Latino",
+                       "Arab-American"
+                     ]}
         />
         <VictoryAxis
           dependentAxis
@@ -50,24 +50,14 @@ export const Visualizations = () => {
         />
       <VictoryStack colorScale={'blue'}>
           <VictoryBar
-            data={data2012}
-            x='quarter'
-            y='earnings'
-          />
-          <VictoryBar
-            data={data2013}
-            x='quarter'
-            y='earnings'
-          />
-          <VictoryBar
-            data={data2014}
-            x='quarter'
-            y='earnings'
-          />
-          <VictoryBar
             data={data2015}
-            x='quarter'
-            y='earnings'
+            x='race'
+            y='totals'
+          />
+          <VictoryBar
+            data={data2016}
+            x='race'
+            y='totals'
           />
         </VictoryStack>
       </VictoryChart>

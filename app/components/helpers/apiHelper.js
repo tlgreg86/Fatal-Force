@@ -5,5 +5,3 @@ export default class ApiCall {
     .then(dataObj => dataObj)
   }
 }
-
-log
