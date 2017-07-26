@@ -2,13 +2,13 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
-  background: #1B264F;
+  /*background: #1B264F;*/
   /*background: white;*/
   font-family: sans-serif;
   font-weight: 100;
-  /*background-image: url('../images/police-background.png');*/
-  /*background-repeat: no-repeat;
-  background-size: 100% 100vh;*/
+  background-image: url('../images/police-background.png');
+  background-repeat: repeat;
+  background-size: 100% 100vh;
 }
 
 .app-wrapper {
@@ -66,30 +66,58 @@ body {
 .loading-spinner {
   position: fixed;
   height: 70vh;
-  width: 100%;
+  width: 60%;
   background-image: url(../images/loading.gif);
   background-repeat: no-repeat;
   background-position: center;
 }
 
+.search-and-grid-wrapper {
+  display: flex;
+}
+
 .card-grid {
+  text-align: center;
+  margin: 30px 0 30px 0;
   width: 98%;
-  height: 78vh;
+  height: 69vh;
   padding: 1%;
   overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 215px);
+  grid-template-columns: repeat(auto-fill, 280px);
   grid-row-gap: 60px;
   grid-column-gap: 20px;
   justify-content: space-around;
 }
 
-.card {
+.search-wrapper {
+  margin: 45px 0 0 56px;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-female {
   padding-left: 10px;
   color: black;
   width: 210px;
-  height: auto;
-  background-color: #B8BED5;
+  height: 220px;
+  background-image: url('../images/female-profile.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: 1px solid white;
+}
+
+.card-male {
+  padding-left: 10px;
+  color: black;
+  width: 210px;
+  height: 220px;
+  background-image: url('../images/male-profile.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   border: 1px solid white;
 }
 
