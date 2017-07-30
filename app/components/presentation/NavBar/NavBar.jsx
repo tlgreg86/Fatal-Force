@@ -6,10 +6,15 @@ export const NavBar = () => {
 
   return (
     <div className='nav-bar'>
-      <h1 className='title-nav-bar'>Fatal Force</h1>
-      <NavLink exact to='/' activeClassName='selected'>Home</NavLink>
-      <NavLink to='/victims-list' activeClassName='selected'>Victims List</NavLink>
-      <NavLink to='/visualizations' activeClassName='selected'>Visualizations</NavLink>
+      <NavLink exact to='/' className='title-nav-bar' activeClassName='selected'>FATAL FORCE</NavLink>
+      <div className='links-wrapper'>
+        <div className='victims-list-link'>
+          <NavLink to='/victims-list' className='nav-bar-link' activeClassName='selected'>Victims List</NavLink>
+        </div>
+        <div className='vis-link'>
+          <NavLink to='/visualizations' className='nav-bar-link' activeClassName='selected'>Visualizations</NavLink>
+        </div>
+      </div>
     </div>
   )
 }
