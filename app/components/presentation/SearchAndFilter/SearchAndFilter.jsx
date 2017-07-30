@@ -12,7 +12,10 @@ export default class SearchAndFilter extends Component {
     return (
       <div className='search-wrapper'>
         <form onSubmit={(e) => {e.preventDefault}}>
-          <input value={this.state.searchInput} onChange={(e) => this.setState({searchInput: e.target.value})}/>
+          <input placeholder='Enter first and last name here'
+                 value={this.state.searchInput} 
+                 onChange={(e) => this.setState({searchInput: e.target.value})}
+                 />
           <button>Submit</button>
         </form>
       </div>

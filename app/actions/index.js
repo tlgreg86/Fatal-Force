@@ -16,3 +16,10 @@ export const addData = (dataArray) => {
     dataArray
   }
 }
+
+export const searchData = (searchInput) => {
+  return {
+    type: 'SEARCH_DATA',
+    searchInput
+  }
+}

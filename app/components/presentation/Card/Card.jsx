@@ -2,13 +2,11 @@ import React from 'react';
 
 export const Card = ({cardData}) => {
 
-const maleOrFemale = cardData.sex === 'Female' ? 'card-female' : 'card-male'
-
   return (
-    <div className={maleOrFemale}>
+    <div className='card'>
       <p>{`Name: ${cardData.name}`}</p>
       <p>{`State: ${cardData.state}`}</p>
-      <p>{`Year: ${cardData.year}`}</p>
+      <p>{`Year killed: ${cardData.year}`}</p>
     </div>
   )
 }

@@ -9,8 +9,10 @@ export const VisualizationsPage = () => {
   return (
     <div className='vis-wrapper'>
       <NavBar />
-      <BarChartContainer />
-      <PieChartContainer />
+      <div className='charts-container'>
+        <BarChartContainer />
+        <PieChartContainer />
+      </div>
     </div>
   )
 }

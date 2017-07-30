@@ -5,8 +5,11 @@ export const LandingPage = () => {
 
   return (
     <div className='landing-page'>
-      <h1 className='title'>Fatal Force</h1>
-      <NavLink exact to='/victims-list' activeClassName='selected'>Enter Here</NavLink>
+      <h1 className='title'>
+        <NavLink exact to='/victims-list' className='enter-here'>
+          FATAL FORCE
+        </NavLink>
+      </h1>
     </div>
   )
 }
