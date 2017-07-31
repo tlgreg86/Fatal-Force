@@ -6,7 +6,7 @@ import { searchResults } from './searchReducer';
 
 const rootReducer = combineReducers({
   data,
-  searchResults
-})
+  searchResults,
+});
 
 export default rootReducer;
