@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { CardGrid } from '../presentation/CardGrid/CardGrid';
-import { loadData } from '../../actions';
+import { searchData } from '../../actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -9,4 +9,8 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, null)(CardGrid)
+const mapDispatchToProps = (dispatch) => {
+  return { handleSearch: (name) => dispatch(searchData(name)) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardGrid)

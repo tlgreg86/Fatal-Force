@@ -2,7 +2,7 @@ import React from 'react';
 
 import { NavBar } from '../NavBar/NavBar';
 import { Card } from '../Card/Card';
-import SearchAndFilter from '../SearchAndFilter/SearchAndFilter';
+import SearchAndFilterContainer from '../../containers/SearchAndFilterContainer';
 
 export const CardGrid = (props) => {
   const { data } = props;
@@ -30,7 +30,7 @@ export const CardGrid = (props) => {
     <div className='victims-page'>
       <NavBar />
       <div className='search-and-grid-wrapper'>
-        <SearchAndFilter />
+        <SearchAndFilterContainer />
         <div className='card-grid'>
           {!data.length ? loadingDiv : dataDiv}
         </div>

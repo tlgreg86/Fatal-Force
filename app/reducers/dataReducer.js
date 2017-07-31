@@ -5,6 +5,5 @@ export const data = (state=[], action) => {
       return [...state, ...newData]
     default:
       return state
-
   }
 }
