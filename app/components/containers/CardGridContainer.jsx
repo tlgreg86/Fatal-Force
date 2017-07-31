@@ -5,7 +5,8 @@ import { searchData } from '../../actions'
 
 const mapStateToProps = (state) => {
     return {
-    data: state.data
+    data: state.data,
+    searchResults: state.searchResults
   }
 }
 

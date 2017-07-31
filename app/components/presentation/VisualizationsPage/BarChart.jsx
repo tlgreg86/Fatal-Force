@@ -18,22 +18,21 @@ export const BarChart = (props) => {
   const races2016 = totals(filterByYear(data, '2016'))
 
 
-  const data2015 = [
-    {race: 'White', totals: races2015[2015].White},
-    {race: 'Black', totals: races2015[2015].Black},
-    {race: 'Native American', totals: races2015[2015]['Native American']},
-    {race: 'Asian/Pacific Islander', totals: races2015[2015]['Asian/Pacific Islander']},
-    {race: 'Hispanic/Latino', totals: races2015[2015]['Hispanic/Latino']},
-    {race: 'Arab-American', totals: races2015[2015]['Arab-American']}
+  const percentOfRace = [
+    {race: 'White', totals: (races2015[2015].White/195645900)*100},
+    {race: 'Black', totals: (races2015[2015].Black/39257300)*100},
+    {race: 'Native American', totals: (races2015[2015]['Native American']/2493900)*100},
+    {race: 'Asian/Pacific Islander', totals: (races2015[2015]['Asian/Pacific Islander']/18629000)*100},
+    {race: 'Hispanic/Latino', totals: (races2015[2015]['Hispanic/Latino']/56872700)*100},
   ];
-  
-  const data2016 = [
-    {race: 'White', totals: races2016[2016].White},
-    {race: 'Black', totals: races2016[2016].Black},
-    {race: 'Native American', totals: races2016[2016]['Native American']},
-    {race: 'Asian/Pacific Islander', totals: races2016[2016]['Asian/Pacific Islander']},
-    {race: 'Hispanic/Latino', totals: races2016[2016]['Hispanic/Latino']},
-    {race: 'Arab-American', totals: races2016[2016]['Arab-American']}
+
+
+  const percentOfGeneral = [
+    {race: 'White', totals: (races2016[2016].White/318868500)*100},
+    {race: 'Black', totals: (races2016[2016].Black/318868500)*100},
+    {race: 'Native American', totals: (races2016[2016]['Native American']/318868500)*100},
+    {race: 'Asian/Pacific Islander', totals: (races2016[2016]['Asian/Pacific Islander']/318868500)*100},
+    {race: 'Hispanic/Latino', totals: (races2016[2016]['Hispanic/Latino']/318868500)*100},
   ];
 
   return (
@@ -44,50 +43,45 @@ export const BarChart = (props) => {
                            />}
 
 
-        height={700}
-        width={700}
+        height={500}
+        width={750}
         responsive={false}
         domainPadding={40}
         theme={VictoryTheme.material}
       >
         <VictoryAxis
-          tickValues={[1, 2, 3, 4, 5, 6]}
+          tickValues={[1, 2, 3, 4, 5]}
           tickFormat={[
                        "White",
                        "Black",
                        "Native American",
                        "Asian/Pacific Islander",
-                       "Hispanic/Latino",
-                       "Arab-American"
+                       "Hispanic/Latino"
                      ]}
         />
         <VictoryAxis
           dependentAxis
           tickFormat={(x) => (`${x}`)}
         />
-      <VictoryStack colorScale={'cool'}>
+      <VictoryStack colorScale={'cool'} >
           <VictoryBar
-            style={{
-              labels: { fontSize: 15 }
-            }}
-            data={data2015}
+            style={{ parent: { fontSize: 25 } }}
+            data={percentOfRace}
             x='race'
             y='totals'
           />
           <VictoryBar
-            data={data2016}
+            data={percentOfGeneral}
             x='race'
             y='totals'
           />
         </VictoryStack>
         <VictoryLegend
-          style={{
-            labels: { fontSize: 15 }
-          }}
+          style={{ labels: { fontSize: 25 } }}
           colorScale={'cool'}
           data={[
-            {name: '2015', symbol: { type: 'square'}},
-            {name: '2016', symbol: { type: 'square'}},
+            {name: '% of races population ', symbol: { type: 'square'}},
+            {name: '% of general population', symbol: { type: 'square'}},
           ]}
           x={375}
           y={50}
