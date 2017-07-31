@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { NavBar } from '../NavBar/NavBar';
+import { NavBar } from '../NavBar/NavBar.jsx';
 import BarChartContainer from '../../containers/BarChartContainer';
 import PieChartContainer from '../../containers/PieChartContainer';
 
 export const VisualizationsPage = () => {
-
   return (
     <div className='vis-wrapper'>
       <NavBar />
@@ -14,5 +13,5 @@ export const VisualizationsPage = () => {
         <PieChartContainer />
       </div>
     </div>
-  )
-}
+  );
+};

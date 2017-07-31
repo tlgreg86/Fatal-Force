@@ -1,33 +1,33 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 export default class SearchAndFilter extends Component {
-  constructor () {
-    super()
+  constructor() {
+    super();
     this.state = {
-      searchInput: ''
-    }
+      searchInput: '',
+    };
   }
 
   handleSearch(name) {
-    this.props.handleSearch(name)
+    this.props.handleSearch(name);
     this.setState({
-      searchInput: ''
-    })
+      searchInput: '',
+    });
   }
 
 
-  render () {
+  render() {
     return (
       <div className='search-wrapper'>
-        <form onSubmit={(e) => {e.preventDefault()}}>
+        <form onSubmit={(e) => { e.preventDefault(); }} >
           <input className='name-input'
                  placeholder='Enter first and last name here'
                  value={this.state.searchInput}
-                 onChange={(e) => this.setState({searchInput: e.target.value})} />
+                 onChange={ e => this.setState({ searchInput: e.target.value })} />
           <button className='submit'
-                  onClick={(e) => {this.handleSearch(this.state.searchInput)}}>Submit</button>
+                  onClick={ () => { this.handleSearch(this.state.searchInput); }}>Submit</button>
         </form>
       </div>
-    )
+    );
   }
 }
