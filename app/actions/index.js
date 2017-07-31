@@ -1,4 +1,4 @@
-import ApiCall from '../components/helpers/apiHelper';
+import { ApiCall, ApiSearch } from '../components/helpers/apiHelper';
 
 export const loadData = () => {
   return ( dispatch => {
@@ -17,9 +17,19 @@ export const addData = (dataArray) => {
   }
 }
 
-export const searchData = (searchInput) => {
+export const searchData = (name) => {
+  return ( dispatch => {
+    return ApiSearch.getAllData(name)
+      .then(data => {
+        dispatch(addSearchedData(data))
+      })
+      .catch(error => { throw(error)})
+  })
+}
+
+export const addSearchedData = (dataArray) => {
   return {
-    type: 'SEARCH_DATA',
-    searchInput
+    type: 'ADD_SEARCHED_DATA',
+    dataArray
   }
 }
