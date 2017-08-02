@@ -237,3 +237,20 @@ body {
   background-color: white;
   width: 787px;
 }
+
+.pie-charts-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.individual-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.pie-chart-header {
+  text-align: center;
+  color: white;
+}
