@@ -1,35 +1,27 @@
-import { ApiCall, ApiSearch } from '../components/helpers/apiHelper';
-
-export const loadData = () => {
-  return ( dispatch => {
-    return ApiCall.getAllData()
-      .then(data => {
-        dispatch(addData(data))
-      })
-      .catch(error => { throw(error)})
-  })
-}
+import { ApiCall } from '../components/helpers/apiHelper';
 
 export const addData = (dataArray) => {
   return {
     type: 'ADD_DATA',
-    dataArray
-  }
-}
+    dataArray,
+  };
+};
 
-export const searchData = (name) => {
-  return ( dispatch => {
-    return ApiSearch.getAllData(name)
-      .then(data => {
-        dispatch(addSearchedData(data))
+export const loadData = () => {
+  return ((dispatch) => {
+    return ApiCall.getAllData()
+      .then((data) => {
+        dispatch(addData(data));
       })
-      .catch(error => { throw(error)})
-  })
-}
+      .catch((error) => {
+        throw (error);
+      });
+  });
+};
 
-export const addSearchedData = (dataArray) => {
+export const filterData = (dataArray) => {
   return {
-    type: 'ADD_SEARCHED_DATA',
-    dataArray
-  }
-}
+    type: 'FILTER_DATA',
+    dataArray,
+  };
+};

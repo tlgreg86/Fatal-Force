@@ -1,17 +1,13 @@
 import { connect } from 'react-redux';
 
-import { CardGrid } from '../presentation/CardGrid/CardGrid';
-import { searchData } from '../../actions'
+import { CardGrid } from '../presentation/CardGrid/CardGrid.jsx';
+import { filterResults } from '../../reducers';
 
 const mapStateToProps = (state) => {
-    return {
+  return {
     data: state.data,
-    searchResults: state.searchResults
-  }
-}
+    filterResults: state.filterResults,
+  };
+};
 
-const mapDispatchToProps = (dispatch) => {
-  return { handleSearch: (name) => dispatch(searchData(name)) }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CardGrid)
+export default connect(mapStateToProps, null)(CardGrid);
