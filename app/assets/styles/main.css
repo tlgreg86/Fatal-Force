@@ -194,14 +194,29 @@ body {
   background-color: rgba(0, 0, 0, 0.86);
 }
 
+.category-dropdown {
+  font-size: 1em;
+  height: 31px;
+  width: 313px;
+  margin-top: 20px;
+}
+
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
   color: white;
   font-family: sans-serif;
   font-size: 1.1em;
   background-color: rgba(0, 0, 0, 0.84);
   box-shadow: 7px 7px #0062b0;
-  height: 130px;
+  height: 243px;
   width: 275px;
+}
+
+.card-info {
+  margin: 0;
 }
 
 .vis-wrapper {

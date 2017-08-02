@@ -2,11 +2,11 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
 import { data } from './dataReducer';
-import { searchResults } from './searchReducer';
+import { filterResults } from './filterReducer';
 
 const rootReducer = combineReducers({
   data,
-  searchResults,
+  filterResults,
 });
 
 export default rootReducer;

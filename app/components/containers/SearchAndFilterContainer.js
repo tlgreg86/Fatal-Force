@@ -1,12 +1,18 @@
 import { connect } from 'react-redux';
 
-import SearchAndFilter from '../presentation/SearchAndFilter/SearchAndFilter';
-import { searchData } from '../../actions'
+import SearchAndFilter from '../presentation/SearchAndFilter/SearchAndFilter.jsx';
+import { filterData } from '../../actions';
+
+const mapStateToProps = (state) => {
+  return {
+    data: state.data,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleSearch: (name) => dispatch(searchData(name))
-  }
-}
+    handleSearch: dataArray => dispatch(filterData(dataArray)),
+  };
+};
 
-export default connect(null, mapDispatchToProps)(SearchAndFilter)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchAndFilter);

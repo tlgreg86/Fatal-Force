@@ -1,4 +1,4 @@
-import { searchResults } from './searchReducer';
+import { filterResults } from './filterReducer';
 
 const dataArray = [{
   _id: '597ed571bc4435bc7ebb60ee',
@@ -18,17 +18,17 @@ const dataArray = [{
   __v: 0,
 }];
 
-describe('search reducer tests', () => {
+describe('filter reducer tests', () => {
   it('default case should return an empty array', () => {
-    expect(searchResults(undefined, {})).toEqual([]);
+    expect(filterResults(undefined, {})).toEqual([]);
   });
 
-  it('should add the searched data', () => {
+  it('should add the filtered data', () => {
     const action = {
       type: 'ADD_SEARCHED_DATA',
       dataArray,
     };
 
-    expect(searchResults(undefined, action)).toHaveLength(1);
+    expect(filterResults(undefined, action)).toHaveLength(1);
   });
 });
