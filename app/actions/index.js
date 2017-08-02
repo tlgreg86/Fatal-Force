@@ -1,4 +1,5 @@
-import { ApiCall } from '../components/helpers/apiHelper';
+// import { ApiCall } from '../components/helpers/apiHelper';
+
 
 export const addData = (dataArray) => {
   return {
@@ -7,17 +8,23 @@ export const addData = (dataArray) => {
   };
 };
 
-export const loadData = () => {
+export const loadData = (api) => {
   return ((dispatch) => {
-    return ApiCall.getAllData()
-      .then((data) => {
-        dispatch(addData(data));
-      })
-      .catch((error) => {
-        throw (error);
-      });
+    return dispatch(addData(api));
   });
 };
+
+// export const loadData = () => {
+//   return ((dispatch) => {
+//     return ApiCall.getAllData()
+//       .then((data) => {
+//         dispatch(addData(data));
+//       })
+//       .catch((error) => {
+//         throw (error);
+//       });
+//   });
+// };
 
 export const filterData = (dataArray) => {
   return {

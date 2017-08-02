@@ -1,5 +1,5 @@
 import React from 'react';
-import { VictoryPie, VictoryLegend } from 'victory';
+import { VictoryPie, VictoryLegend, VictoryContainer } from 'victory';
 
 import { filterByYear, totals } from '../../helpers/cleaner';
 
@@ -28,21 +28,32 @@ export const PieChart = (props) => {
 
   return (
     <div className='pie-charts-wrapper'>
-      <VictoryPie
-        colorScale={'green'}
-        labelRadius={20}
-        width={175}
-        style={{ labels: { fill: 'white', fontSize: 2, fontWeight: 'regular' } }}
-        data={percentOfRace2015}
-      />
-      <VictoryPie
-        colorScale={'red'}
-        labelRadius={20}
-        width={175}
-        style={{ labels: { fill: 'white', fontSize: 2, fontWeight: 'regular' } }}
-        data={percentOfGeneral2016}
-      />
-
+      <div className='individual-container'>
+        <h1 className='pie-chart-header'>% of Races Population</h1>
+        <VictoryPie
+          containerComponent={<VictoryContainer className='pie-chart'
+                                                responsive={false}/>}
+          colorScale={'blue'}
+          labelRadius={150}
+          height={700}
+          width={700}
+          style={{ labels: { fill: 'white', fontSize: 18, fontWeight: 'regular' } }}
+          data={percentOfRace2015}
+        />
+      </div>
+      <div className='individual-container'>
+        <h1 className='pie-chart-header'>% of General Population</h1>
+        <VictoryPie
+          containerComponent={<VictoryContainer className='pie-chart'
+                                                responsive={false}/>}
+          colorScale={'blue'}
+          labelRadius={150}
+          height={700}
+          width={700}
+          style={{ labels: { fill: 'white', fontSize: 18, fontWeight: 'regular' } }}
+          data={percentOfGeneral2016}
+        />
+      </div>
     </div>
   );
 };

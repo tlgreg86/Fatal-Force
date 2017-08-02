@@ -11,7 +11,6 @@ import { VictoryBar,
 import { filterByYear, totals } from '../../helpers/cleaner';
 
 export const BarChart = ({ data }) => {
-  console.log(data);
   const races2015 = totals(filterByYear(data, '2015'));
   const races2016 = totals(filterByYear(data, '2016'));
 
