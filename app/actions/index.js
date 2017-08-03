@@ -1,4 +1,4 @@
-// import { ApiCall } from '../components/helpers/apiHelper';
+import { ApiCall } from '../components/helpers/apiHelper';
 
 
 export const addData = (dataArray) => {

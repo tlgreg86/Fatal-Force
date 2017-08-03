@@ -3,6 +3,7 @@ import React from 'react';
 import { NavBar } from '../NavBar/NavBar.jsx';
 import { Card } from '../Card/Card.jsx';
 import SearchAndFilterContainer from '../../containers/SearchAndFilterContainer';
+import { Map } from '../Map/Map.jsx';
 
 export const CardGrid = ({ data, filterResults }) => {
   const loadingDiv = <div className='loading-spinner'></div>;
@@ -31,11 +32,16 @@ export const CardGrid = ({ data, filterResults }) => {
       <NavBar />
       <div className='search-and-grid-wrapper'>
         <SearchAndFilterContainer />
-        <div className='card-grid'>
-          {!data.length ? loadingDiv : dataDiv}
+        <div className='map-and-grid'>
+          <Map markers={filterResults}
+               containerElement={<div style={{ height: `70%` }} />}
+               mapElement={<div style={{ height: `100%` }} />} />
+          <div className='card-grid'>
+            {!data.length ? loadingDiv : dataDiv}
+          </div>
         </div>
       </div>
     </div>
 
-  )
-}
+  );
+};
